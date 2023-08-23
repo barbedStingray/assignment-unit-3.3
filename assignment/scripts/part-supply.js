@@ -10,22 +10,28 @@ console.log( partsNeeded );
 
 
 // 2. Create a variable called 'supplyChanges' whose value is an array containing
-//    the following numbers: 3, 5, -6, 0, 7, 11.
+//    the following numbers: .
 console.log('2. Create supplyChanges:');
-
+let supplyChanges = [ 3, 5, -6, 0, 7, 11 ];
+console.log( supplyChanges );
 
 // 3. Create a variable called 'secondItem' and assign it the value of the second
 //    item in the 'supplyChanges' array.
 console.log('3. Access the second value of supplyChanges:');
+let secondItem = supplyChanges[1];
+console.log( supplyChanges[1] );
 
 
 // 4. The last value in the 'supplyChanges' array was added by mistake.
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
 console.log('4. Remove the last value from supplyChanges:');
-
+let removedItem = supplyChanges.pop();
+console.log( removedItem );
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Add the value 25 into supplyChanges.');
+supplyChanges.push( 25 );
+console.log ( supplyChanges );
 
 
 // 6. Create three new variables named 'positives', 'negatives', and
@@ -37,7 +43,23 @@ console.log('5. Add the value 25 into supplyChanges.');
 //      - If the value is a zero, push it into the 'zeroes' array.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
 
+let positives = [];
+let negatives = [];
+let zeroes = [];
+//of loop
+for( let index of supplyChanges ) {
+    if( index > 0 ) {
+      positives.push( index );
+    } else if( index === 0 ){
+      zeroes.push( index );
+    } else if ( index < 0 ){
+      negatives.push( index );
+    }//end if else
+}//end of loop
 
+console.log( positives );
+console.log( negatives );
+console.log( zeroes );
 
 
 // ***** STRETCH GOALS *********************************************
@@ -46,12 +68,36 @@ console.log('6. Looping through supplyChanges to populate arrays with positive, 
 //    'stretchNegatives', and 'stretchZeroes'. 
 console.log('7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:');
 
+//I think I wrote the for loop the first time, repeated for practice
+let stretchPositives = [];
+let stretchNegatives = [];
+let stretchZeroes = [];
+
+for ( let index of supplyChanges ){
+  if( index > 0 ){
+    stretchPositives.push( index );
+  } else if( index === 0 ){
+    stretchZeroes.push( index );
+  } else if( index < 0 ){
+    stretchNegatives.push( index );
+  }
+}
+console.log( stretchPositives );
+console.log( stretchNegatives );
+console.log( stretchZeroes );
+
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
 console.log('8. Looping through supplyChanges to calculate the sum:');
+let totalParts = 0;
 
+for( let item of supplyChanges ){
+    console.log( item );
+    totalParts += item;
+}
+console.log( totalParts );
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. There are 572
